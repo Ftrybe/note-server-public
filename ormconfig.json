@@ -1,0 +1,54 @@
+[
+
+   {  
+      "name":"mongodb",
+      "type": "mongodb",
+      "url":"mongodb://user:password@127.0.0.1",
+      "port": "27017",
+      "synchronize": true,
+      "database": "note",
+      "authSource": "note",
+      "logging": true,
+      "entities": [
+         "src/entity/**/**.mg.ts"
+      ],
+      "migrations": [
+         "src/migration/**/**.mg.ts"
+      ],
+      "subscribers": [
+         "src/subscriber/**/**.mg.ts"
+      ],
+      "cli": {
+         "entitiesDir": "src/entity",
+         "migrationsDir": "src/migration",
+         "subscribersDir": "src/subscriber"
+      }
+   },
+   {
+      "name":"default",
+      "type": "mysql",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "username": "user",
+      "password": "password",
+      "database": "note",
+      "synchronize": true,
+      "logging": true,
+      "charset": "UTF8MB4_GENERAL_CI",
+      "timezone": "+8",
+      "entities": [
+         "src/entity/**/**.entity.ts"
+      ],
+      "migrations": [
+         "src/migration/**/**.entity.ts"
+      ],
+      "subscribers": [
+         "src/subscriber/**/**.entity.ts"
+      ],
+      "cli": {
+         "entitiesDir": "src/entity",
+         "migrationsDir": "src/migration",
+         "subscribersDir": "src/subscriber"
+      }
+   }
+]

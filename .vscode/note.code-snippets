@@ -1,0 +1,75 @@
+{
+		"1": {
+		"scope": "javascript,typescript",
+		"prefix": "note-controll",
+		"body": [
+			"public static async ${1:methodName}(req: Request, rsp: Response) {",
+			"\t$2",
+			"}\n"
+		],
+		"description": "控制层方法"
+	},
+	"2": {
+		"scope": "javascript,typescript",
+		"prefix": "note-send-data",
+		"body": [
+			"const ajaxResult = new AjaxResult();",
+			"ajaxResult.setData($1);",
+			"rsp.send(ajaxResult);"
+		],
+		"description": "生成返回结果"
+	},
+	"3": {
+		"scope": "javascript,typescript",
+		"prefix": "note-pid",
+		"body": [
+			"let id = req.params.id;",
+			"$0"
+		],
+		"description": "获取id"
+	},
+	"4": {
+		"scope": "javascript,typescript",
+		"prefix": "note-send-success",
+		"body": [
+			"rsp.send(AjaxResult.success($2));"
+		],
+		"description": "生成返回结果"
+	},
+	"5": {
+		"scope": "javascript,typescript",
+		"prefix": "note-send-fail",
+		"body": [
+			"rsp.send(AjaxResult.fail($2));"
+		],
+		"description": "生成返回结果"
+	},
+	"6": {
+		"scope": "javascript,typescript",
+		"prefix": "note-router",
+		"body": [
+			"import { BaseRouter } from \"./base.router\";",
+			
+			"class ${1:Entity}Router extends BaseRouter{",
+				"\tconstructor() {",
+					"\t\tsuper();",
+				"\t}\n",
+				"\tget(): void {}\n",
+				"\tpost(): void {}\n",
+				"\tput(): void {}\n",
+				"\tdelete(): void {}",
+			"}",
+			"export default new ${1:Entity}Router().router;"
+		],
+		"description": "生成路由文件"
+	},
+	"7": {
+		"scope": "javascript,typescript",
+		"prefix": "note-payload",
+		"body": [
+			"rsp.locals.jwtPayload"
+		],
+		"description": "生成路由文件"
+	}
+	
+}
